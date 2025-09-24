@@ -1,47 +1,60 @@
 "use strict";
-const start = async () => {
+const start = async () => 
+{
   let algoValue = Number(document.querySelector(".algo-menu").value);
   let speedValue = Number(document.querySelector(".speed-menu").value);
 
-  if (speedValue === 0) {
+  if (speedValue === 0) 
+  {
     speedValue = 1;
   }
-  if (algoValue === 0) {
+  if (algoValue === 0) 
+  {
     alert("No Algorithm Selected");
     return;
   }
 
   let algorithm = new sortAlgorithms(speedValue);
-  if (algoValue === 1) await algorithm.BubbleSort();
-  if (algoValue === 2) await algorithm.SelectionSort();
+  if (algoValue === 1) algorithm.BubbleSort();
+  if (algoValue === 2) algorithm.SelectionSort();
   if (algoValue === 3) await algorithm.InsertionSort();
   if (algoValue === 4) await algorithm.MergeSort();
   if (algoValue === 5) await algorithm.QuickSort();
 };
 
-const RenderScreen = async () => {
+const RenderScreen = async () => 
+{
   let algoValue = Number(document.querySelector(".algo-menu").value);
   await RenderList();
 };
 
-const RenderList = async () => {
+const RenderList = async () => 
+{
   let sizeValue = Number(document.querySelector(".size-menu").value);
   await clearScreen();
 
   let list = await randomList(sizeValue);
   const arrayNode = document.querySelector(".array");
-  console.log(arrayNode);
-  console.log(list);
-  for (const element of list) {
+
+  for (const element of list) 
+  {
     const node = document.createElement("div");
     node.className = "cell";
     node.setAttribute("value", String(element));
     node.style.height = `${3.8 * element}px`;
+    node.style.position = "relative";
+
+    const valueNode = document.createElement("span");
+    valueNode.className = "value-label";
+    valueNode.innerText = element;
+
+    node.appendChild(valueNode);
     arrayNode.appendChild(node);
   }
 };
 
-const RenderArray = async (sorted) => {
+const RenderArray = async (sorted) => 
+{
   let sizeValue = Number(document.querySelector(".size-menu").value);
   await clearScreen();
 
@@ -52,21 +65,24 @@ const RenderArray = async (sorted) => {
   const divnode = document.createElement("div");
   divnode.className = "s-array";
 
-  for (const element of list) {
-    const dnode = document.createElement("div");
-    dnode.className = "s-cell";
-    dnode.innerText = element;
-    divnode.appendChild(dnode);
+  for (const element of list) 
+  {
+    const node = document.createElement("div");
+    node.className = "s-cell";
+    node.innerText = element;
+    divnode.appendChild(node);
   }
   arrayNode.appendChild(divnode);
 };
 
-const randomList = async (Length) => {
+const randomList = async (Length) => 
+{
   let list = new Array();
   let lowerBound = 1;
   let upperBound = 100;
 
-  for (let counter = 0; counter < Length; ++counter) {
+  for (let counter = 0; counter < Length; ++counter) 
+  {
     let randomNumber = Math.floor(
       Math.random() * (upperBound - lowerBound + 1) + lowerBound
     );

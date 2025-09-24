@@ -11,16 +11,15 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="./css/style.css" />
-  <title>Sorting visualizer</title>
+  <title>Sortify</title>
 </head>
 
 <body>
   <div class="nav-container">
     <h2 class="title" onclick="window.location.reload()">
-      Sorting visualizer
+      Sortify
     </h2>
     <div class="navbar" id="navbar">
-      <a id="random" onclick="RenderScreen()">Generate array</a>
       <span class="options">
         <select name="select sort algorithm" id="menu" class="algo-menu">
           <option value="0">Choose algorithm</option>
@@ -31,6 +30,7 @@
           <option value="5">Quick Sort</option>
         </select>
       </span>
+
       <span class="options">
         <select name="select array size" id="menu" class="size-menu">
           <option value="0">Array size</option>
@@ -48,6 +48,7 @@
           <option value="100">100</option>
         </select>
       </span>
+
       <span class="options">
         <select name="speed of visualization" id="menu" class="speed-menu">
           <option value="0">Speed</option>
@@ -58,6 +59,9 @@
           <option value="4">4.00x</option>
         </select>
       </span>
+
+      <a id="random" onclick="RenderScreen()">Different Array</a>
+    
       <a class="start">Sort</a>
       <a class="icon"><i class="fa fa-bars"></i></a>
     </div>
@@ -66,12 +70,12 @@
     <div class="array"></div>
   </div>
   <footer class="footer">
-    <p>Created with <i class="fa fa-heart"></i> by Dharshak</p>
+    <p>Created by<i> Aditya Ayan Singh</i></p>
     <p>
-      <a href="https://www.linkedin.com/in/dharshakch97/" target="_blank" class="link">
+      <a href="https://www.linkedin.com/in/aditya-ayan-singh-142854319/" target="_blank" class="link">
         <i class="fa fa-linkedin-square" aria-hidden="true"></i>
       </a>
-      <a href="https://github.com/dharshakch97" target="_blank" class="link">
+      <a href="https://github.com/Ayan-10-06-03" target="_blank" class="link">
         <i class="fa fa-github" aria-hidden="true"></i>
       </a>
     </p>

@@ -1,14 +1,15 @@
 :root {
-  --primary-color: #1abc9c;
+  --primary-color: #4710d1;
   --secondary-color: #16a085;
 }
 * {
-  /* Below is the standard CSS code one should add to get rid of default margins and padding which most of tge HTML elements have */
+  /* Below is the standard CSS code one should add to get rid of default margins and padding which most of the HTML elements have */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
   user-select: none;
+  background-color: #7ba0be;
 }
 body {
   position: relative;
@@ -17,7 +18,7 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  align-items: stretch;
+  /* align-items: stretch; */
 }
 
 /* Title CSS */
@@ -54,7 +55,8 @@ body {
   background-color: #1abc9c;
 }
 .navbar a:hover {
-  background-color: transparent;
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .navbar #menu {
   width: fit-content;
@@ -82,56 +84,69 @@ body {
   width: 410px;
   max-height: 731px;
 }
+
 .array {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   min-height: 100%;
   height: 100%;
   padding: 1rem;
   flex-direction: row;
 }
+
 .cell {
-  display: flex;
-  align-items: flex-start;
   flex: 0.5;
   width: 0.000001%;
   margin: 1px;
   background-color: #d6d6d6;
   resize: horizontal;
   position: relative;
-  transition: all 0.4s ease-in;
+  border-radius: 4px;
+  transition: all 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+.value-label{
+  position:absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 14px;
+  pointer-events: none;
+  transition: transform 1.2s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
 .cell.done {
-  background-color: #9cec5b;
+  background-color: #e20707;
   border-color: #9cec5b;
   color: white;
-  transition: all 0.4s ease-out;
+  transition: all 0.2s ease-out;
+  box-shadow: 0 0 10px rgba(236, 110, 110, 0.8);
 }
 .cell.visited {
   border-color: #6184d8;
   background-color: #6184d8;
   color: white;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 .cell.current {
   border-color: #50c5b7;
   background-color: #50c5b7;
   color: white;
-  transition: all 0.4s ease-out;
+  transition: all 0.3s ease;
 }
 .cell.min {
   background-color: #ff1493;
   border-color: #ff1493;
   color: white;
-  transition: all 0.4s ease-out;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Footer CSS */
-.fa.fa-heart {
-  color: #eb2c13;
-}
 footer {
-  text-align: center;
+  /* text-align: center; */
   font-size: 18px;
   color: #2c3e50;
   padding: 1.6em;
